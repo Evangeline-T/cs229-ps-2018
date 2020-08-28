@@ -81,7 +81,8 @@ class LogisticRegression(LinearModel):
         # *** START CODE HERE ***
         # compute probability
         g = lambda x: 1 / (1 + np.exp(-x))
-        preds = g(x.dot(self.theta))
+        preds = (g(x.dot(self.theta)) >= 0.5).astype(np.int)
+        
         
         return preds
         # *** END CODE HERE ***
