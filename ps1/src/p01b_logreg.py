@@ -58,7 +58,7 @@ class LogisticRegression(LinearModel):
             
             # compute H
             x_theta = x.dot(theta)
-            H = (1 / m) * g(x_theta).dot(g(1 - x_theta)) * (x.T).dot(x)
+            H = (1 / m) * g(x_theta).dot(1 - g(x_theta)) * (x.T).dot(x)
             H_inv = np.linalg.inv(H)
             
             # update
